@@ -1,0 +1,22 @@
+node_modules/
+.next/
+out/
+build/
+.vercel/
+*.tsbuildinfo
+next-env.d.ts
+.env
+.env*
+!.env.example
+.DS_Store
+Thumbs.db
+npm-debug.log*
+*.log
+
+# Working materials — not site source/assets (the actual served images
+# live in public/photo/). Raw/source photography, AI-generated mockups
+# used only as design reference, and internal planning docs should not
+# be published in this repo.
+/photo/
+/Claude outputs/
+/PENCHEFF_INFO_DESIGN_CONCEPT.md
