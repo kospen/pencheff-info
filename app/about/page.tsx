@@ -141,8 +141,8 @@ export default function AboutPage() {
         </NumberedSection>
 
         <NumberedSection number={num()} title="Languages & digital skills">
-          <p className="text-lg leading-relaxed text-slate">Bulgarian is my mother tongue. My English proficiency is C1 in listening and reading, and B2 in writing and spoken communication.</p>
-          <p className="mt-4 text-lg leading-relaxed text-slate">My digital skills include Microsoft 365 tools for documents, spreadsheets, presentations and collaboration, alongside training in Python programming basics and cybersecurity.</p>
+          <p className="text-lg leading-relaxed text-slate">Bulgarian is my mother tongue. My English proficiency is B2 across listening, reading, writing and spoken communication.</p>
+          <p className="mt-4 text-lg leading-relaxed text-slate">My digital skills combine advanced use of Microsoft 365 for document preparation, data analysis, presentations and collaborative work with foundational training in Python programming and cybersecurity. I also have extensive practical experience with a broad range of artificial intelligence tools, including generative AI, AI-assisted research, data analysis, content creation, coding and automation tools. I actively use AI-supported workflows for research, project development, information analysis, documentation and digital product development. This combination of digital and AI skills supports my work in economics, European projects, entrepreneurship and digital transformation, while providing a practical understanding of how emerging technologies can be integrated into professional and business processes.</p>
         </NumberedSection>
 
         <nav aria-label="Explore" className="grid gap-4 border-t border-navy py-10 sm:grid-cols-2 lg:grid-cols-4">
