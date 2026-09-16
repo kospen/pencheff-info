@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { Container, CtaLink, Eyebrow } from "@/components/editorial/primitives";
+
+export const metadata: Metadata = {
+  title: { absolute: "Page Not Found | PENCHEFF.INFO" },
+  robots: { index: false, follow: false },
+  alternates: { canonical: undefined },
+};
 
 export default function NotFound() {
   return (
