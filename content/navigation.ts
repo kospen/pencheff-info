@@ -39,7 +39,7 @@ export const coreAreas = [
   {
     number: "03",
     title: "Projects",
-    description: "European, research and innovation projects — completed, current and in development.",
+    description: "Professional experience across European, research and innovation projects.",
     href: "/projects",
     icon: "projects",
   },
