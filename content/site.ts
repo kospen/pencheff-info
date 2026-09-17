@@ -21,17 +21,21 @@ export const site = {
 
   eyebrow: "Ideas / Research / Technology / Impact",
 
-  /** DRAFT wording (from the approved hero reference) — to be confirmed. */
+  /** Used in the site footer tagline (kept separate from the hero copy below). */
   positioning: "Research, technology and entrepreneurship for a more sustainable future.",
-  /** DRAFT wording (from the approved hero reference) — to be confirmed. */
-  introduction:
-    "Working at the intersection of digital transformation, artificial intelligence and agricultural entrepreneurship.",
 
   /**
    * Hero editorial elements (desktop). DRAFT — confirm or change.
    * Set `quote` to "" to hide it.
    */
   hero: {
+    /** Hero heading (below the name). */
+    heading: "Economist, researcher and project professional.",
+    /** Hero body copy — one or more paragraphs. */
+    body: [
+      "My research focuses on the agricultural sector, particularly on digital transformation, agricultural entrepreneurship and the economic impact of emerging technologies.",
+      "Beyond academic research, my work includes the development and implementation of European and national projects, with a focus on innovation, digital technologies and investment. I am interested in the connection between research and practice — how new ideas and technologies can be translated into viable projects, business opportunities and practical solutions.",
+    ],
     quote: "Innovation in agriculture today creates stronger communities tomorrow.",
     tagsTop: ["People", "Ideas", "Sustainable futures"],
     tagsBottom: ["Bulgaria", "Europe", "Beyond"],

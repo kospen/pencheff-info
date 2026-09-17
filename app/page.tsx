@@ -150,10 +150,13 @@ export default function HomePage() {
             <div className="md:col-span-7">
               <Eyebrow>About</Eyebrow>
               <h2 id="about-title" className="mt-5 font-serif text-[2rem] leading-tight tracking-[-0.015em] md:text-[2.75rem]">
-                Economist, researcher and project professional.
+                Connecting research, projects and practice.
               </h2>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-slate md:text-lg">
-                My work brings together economics, research and practical experience in European projects, with a particular focus on digital transformation, agricultural entrepreneurship, investment and innovation.
+                My work is driven by an interest in how ideas move beyond research and become practical solutions. I combine economic thinking with experience in project development, technology and innovation, working across academic and business environments.
+              </p>
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-slate md:text-lg">
+                PENCHEFF.INFO brings these different areas of my work together — research, projects, publications and ongoing ideas.
               </p>
               <div className="mt-6">
                 <CtaLink href="/about">About Kostadin</CtaLink>

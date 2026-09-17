@@ -70,10 +70,10 @@ function Record({ r }: { r: ActivityRecord }) {
           <div className={featured ? "mt-5 border-t border-line pt-5" : "mt-3"}>
             <p className="label">{r.isPresenter ? "Paper presented" : "Paper"}</p>
             <p className={`mt-1.5 font-serif leading-snug italic ${featured ? "text-xl md:text-[1.375rem]" : "text-lg"}`}>“{r.presentationTitle}”</p>
-            {r.coAuthors?.length ? (
+            {r.coAuthors ? (
               <p className="mt-2 text-[0.9375rem] text-slate">
                 <span className="label mr-2">Authors</span>
-                Kostadin Penchev, {r.coAuthors.join(", ")}
+                {["Kostadin Penchev", ...r.coAuthors].join(", ")}
               </p>
             ) : null}
           </div>

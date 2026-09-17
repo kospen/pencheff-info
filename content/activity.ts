@@ -43,9 +43,11 @@ export const activity: ActivityEntry[] = [
     typeDetail: "Scientific Conference with International Participation",
     title: "“30 Years of Trakia University – Opportunities, Challenges, Successes!”",
     roles: ["presenter"],
-    period: { start: "2025-05" },
-    description: "Participation with a scientific paper.",
-    // TO VERIFY: exact dates, location, paper title.
+    period: { start: "2025-05-16", end: "2025-05-17" },
+    presentationTitle:
+      "Digital Transformation in Agricultural Entrepreneurship in Bulgaria: A Literature Review and Directions for Future Research",
+    coAuthors: [],
+    related: ["publications/digital-transformation-agricultural-entrepreneurship-review-2025"],
   },
   {
     slug: "cooperatives-in-bulgaria-forum",

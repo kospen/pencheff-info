@@ -37,7 +37,7 @@ function TagList({ items, className = "" }: { items: readonly string[]; classNam
 export function Hero() {
   const { hero } = site;
   return (
-    <section aria-labelledby="hero-name" className="relative overflow-hidden xl:h-[40rem]">
+    <section aria-labelledby="hero-name" className="relative overflow-hidden xl:min-h-[40rem]">
       {/* ================================================= desktop layers (≥1280) */}
       <div aria-hidden className="pointer-events-none absolute inset-0 hidden xl:block">
         {/* pale diagonal field from the top */}
@@ -82,9 +82,16 @@ export function Hero() {
             Penchev
           </h1>
           <p className="mt-6 max-w-[27rem] font-serif text-[clamp(1.625rem,2.4vw,2.25rem)] leading-[1.14] tracking-[-0.01em] md:mt-7">
-            {site.positioning}
+            {hero.heading}
           </p>
-          <p className="mt-5 max-w-[26rem] text-[1.0625rem] leading-relaxed text-navy/80">{site.introduction}</p>
+          {hero.body.map((paragraph, i) => (
+            <p
+              key={i}
+              className={`max-w-[26rem] text-[1.0625rem] leading-relaxed text-navy/80 ${i === 0 ? "mt-5" : "mt-3"}`}
+            >
+              {paragraph}
+            </p>
+          ))}
           <div className="mt-8 flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:gap-12 md:mt-10">
             <CtaLink href="/about" variant="secondary">
               About me
