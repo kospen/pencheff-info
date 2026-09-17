@@ -59,7 +59,7 @@ export function SiteHeader() {
         <Wordmark className="text-[1.25rem] lg:text-[1.625rem]" />
 
         <nav aria-label="Main" className="hidden lg:block">
-          <ul className="flex items-center gap-7 xl:gap-9">
+          <ul className="flex items-center gap-5 xl:gap-9">
             {mainNav.map((item) => {
               const active = isActive(pathname, item.href);
               return (
@@ -69,7 +69,7 @@ export function SiteHeader() {
                     aria-current={active ? "page" : undefined}
                     className={`group relative flex flex-col items-center pt-4 pb-2 text-[0.9375rem] transition-colors ${active ? "font-medium text-navy" : "text-slate hover:text-navy"}`}
                   >
-                    <span>{item.label}</span>
+                    <span className="whitespace-nowrap">{item.label}</span>
                     <span aria-hidden className={`mt-2 flex h-1.5 items-center transition-opacity duration-200 ${active ? "opacity-100" : "opacity-0 group-hover:opacity-60"}`}>
                       <span className="h-px w-3 bg-cyan" />
                       <span className="size-1.5 rounded-full bg-cyan" />

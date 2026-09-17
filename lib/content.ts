@@ -5,6 +5,7 @@ import { publications as allPublications } from "@/content/publications";
 import { activity as allActivity } from "@/content/activity";
 import { programmes as allProgrammes } from "@/content/research";
 import { roles as allRoles } from "@/content/about";
+import { getNoteEntries } from "@/lib/notes";
 import {
   activityRoles,
   activitySections,
@@ -23,6 +24,7 @@ import type {
   ActivityEntry,
   BaseEntry,
   EntryRef,
+  Note,
   Project,
   Publication,
   ResearchProgramme,
@@ -110,6 +112,17 @@ export function activitySectionId(a: ActivityEntry): string {
   return activitySections.find((sec) => sec.types.includes(a.type))?.id ?? activitySections[activitySections.length - 1].id;
 }
 
+/* ------------------------------------------------------------------ notes */
+
+/** Newest first. Reads content/notes/*.mdx on every call — see lib/notes.ts. */
+export function getNotes(): Note[] {
+  return visible(getNoteEntries()).sort((a, b) => dateKey(b.date).localeCompare(dateKey(a.date)));
+}
+
+export function getNote(slug: string): Note | undefined {
+  return getNotes().find((n) => n.slug === slug);
+}
+
 /* ------------------------------------------------------------- research */
 
 export function getProgrammes(): ResearchProgramme[] {
@@ -154,6 +167,10 @@ export function resolveRef(ref: EntryRef): ResolvedRef | undefined {
       const a = getActivity().find((x) => x.slug === slug);
       return a && { ref, kindLabel: activityDisplayType(a), title: a.title, href: `/activity#${a.slug}`, placeholder: a.placeholder };
     }
+    case "notes": {
+      const n = getNote(slug);
+      return n && { ref, kindLabel: "Note", title: n.title, href: `/notes/${n.slug}`, placeholder: n.placeholder };
+    }
     default:
       return undefined;
   }
@@ -173,5 +190,6 @@ export function relatedTo(ref: EntryRef, own: EntryRef[] = []): ResolvedRef[] {
   scan("publications", getPublications());
   scan("activity", getActivity());
   scan("research", getProgrammes());
+  scan("notes", getNotes());
   return [...found.values()];
 }

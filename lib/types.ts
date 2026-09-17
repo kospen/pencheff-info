@@ -20,7 +20,8 @@ export type Collection =
   | "activity"
   | "research"
   | "roles"
-  | "themes";
+  | "themes"
+  | "notes";
 
 /**
  * Dates are ISO-like strings with variable precision:
@@ -178,6 +179,34 @@ export interface Publication extends BaseEntry {
   pdf?: string;
   abstract?: string;
   keywords?: string[];
+}
+
+/* ------------------------------------------------------------------- Notes */
+
+/**
+ * NOTES & INSIGHTS — short-form research / technology notes. No CMS or
+ * database: every note is one Markdown/MDX file under content/notes/, with
+ * YAML frontmatter for the fields below and the article body as plain
+ * Markdown. `lib/notes.ts` reads the directory and builds this shape — see
+ * content/notes/README.md for how to publish a new note. `published: false`
+ * (BaseEntry) keeps a note out of the listing and out of the generated
+ * routes without deleting the file (a draft).
+ */
+export interface Note extends BaseEntry {
+  /** Short category label shown on the card and article page, e.g. "Digital Agriculture". */
+  category: string;
+  /** Publication date (ISO). */
+  date: PartialDate;
+  /** One or two sentences shown on the index card. */
+  excerpt: string;
+  /** e.g. "3 min read". Omit to hide. */
+  readTime?: string;
+  /** Card / article image path under /public, e.g. "/notes/example.jpg". */
+  image?: string;
+  /** Required whenever `image` is set — accessibility + SEO. */
+  imageAlt?: string;
+  /** Raw Markdown body (frontmatter fields above already extracted from it). */
+  content: string;
 }
 
 /* ---------------------------------------------------------------- Activity */

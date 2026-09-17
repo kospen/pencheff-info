@@ -10,6 +10,7 @@ export const mainNav: NavItem[] = [
   { label: "Publications", href: "/publications" },
   { label: "Projects", href: "/projects" },
   { label: "Activity", href: "/activity" },
+  { label: "Notes & Insights", href: "/notes" },
   { label: "Entrepreneurship", href: "/entrepreneurship" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
