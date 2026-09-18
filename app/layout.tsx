@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/next";
 
 // Self-hosted fonts (Latin + Cyrillic subsets), bundled at build time.
 import "@fontsource-variable/source-serif-4/opsz.css";
@@ -77,6 +78,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </main>
         <SiteFooter />
         <JsonLd data={personJsonLd()} />
+        <Analytics />
       </body>
     </html>
   );
